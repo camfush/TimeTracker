@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_home_black_24dp"
+            android:title="@string/menu_home" />
+        <item
+            android:id="@+id/nav_settings"
+            android:icon="@drawable/ic_settings_black_24dp"
+            android:title="@string/menu_settings" />
+        <item
+            android:id="@+id/nav_data"
+            android:icon="@drawable/ic_data_black_24dp"
+            android:title="@string/menu_data" />
+    </group>
+
+    <item android:title="Tasks">
+        <menu>
+            <item
+                android:id="@+id/play"
+                android:title="Play" />
+            <item
+                android:id="@+id/study"
+                android:title="Study" />
+            <item
+                android:id="@+id/exercise"
+                android:title="Exercise" />
+            <item
+                android:id="@+id/transport"
+                android:title="Transport" />
+        </menu>
+    </item>
+
+</menu>

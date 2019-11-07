@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Distinction Project</string>
+    <string name="action_colour">New Colours</string>
+    <array name="period_options">
+        <item>Daily</item>
+        <item>Weekly</item>
+        <item>Monthly</item>
+    </array>
+    <string name="title_activity_navigation_drawer">NavigationDrawer</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Cameron\'s Time Tracker</string>
+    <string name="nav_header_subtitle">Currently In Alpha</string>
+    <string name="nav_header_desc">Navigation header</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_settings">Settings</string>
+    <string name="menu_data">Your Data</string>
+</resources>
