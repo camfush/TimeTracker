@@ -280,6 +280,8 @@ public class MainActivity extends AppCompatActivity implements Spinner.OnItemSel
         int xCenter = SCREEN_WIDTH / 2;
         int yCenter = SCREEN_HEIGHT / 2;
 
+        Task.step = 0;
+
         Intent inwardIntent = getIntent();
         ArrayList<Task> taskList = inwardIntent.getParcelableArrayListExtra("TASK_LIST");
         if (taskList != null && taskList.size() > 0) {
@@ -419,7 +421,7 @@ public class MainActivity extends AppCompatActivity implements Spinner.OnItemSel
         int newColour = Task.initial;
         float[] hsv = new float[3];
         Color.colorToHSV(newColour, hsv);
-        hsv[0] += Task.step + 30;
+        hsv[0] += Task.step + Task.STEP_AMOUNT;
         hsv[0] %= 360;
         newColour = Color.HSVToColor(hsv);
         fab.setBackgroundTintList(ColorStateList.valueOf(newColour));

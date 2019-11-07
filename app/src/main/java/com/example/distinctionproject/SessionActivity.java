@@ -50,9 +50,9 @@ public class SessionActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_session);
 
-        ReadWriter readWriter = new ByteReadWriter(getFilesDir() + "dictionary.txt");
-        System.out.println("TIME CHECK: READ TIME: " + readWriter.Read());
-        //readWriter.ReadRaw(R.raw.english_dictionary_short, getResources());
+        ReadWriter readWriter = new BufferedReadWriter(getFilesDir() + "dictionary.txt");
+        //System.out.println("TIME CHECK: READ TIME: " + readWriter.Read());
+        readWriter.ReadRaw(R.raw.english_dictionary_short, getResources());
         database = Word.FormatWordList(readWriter.getWordList());
         System.out.println("TIME CHECK: WRITE TIME: " + readWriter.Write());
 
