@@ -33,7 +33,7 @@ public class DataActivity extends AppCompatActivity implements NavigationView.On
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_data);
 
-        final GraphView graph = (GraphView) findViewById(R.id.graph);
+        final GraphView graph = findViewById(R.id.graph);
 
         Intent intent = getIntent();
         final ArrayList<Task> taskList = intent.getParcelableArrayListExtra("TASK_LIST");

@@ -6,7 +6,7 @@ import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Map;
 
-public class WeightedTrie {
+public class OldWeightedTrie {
 
     static int minMax = 0;
 
@@ -68,7 +68,7 @@ public class WeightedTrie {
 
     TrieNode root;
 
-    public WeightedTrie(ArrayList<Word> wordList) {
+    public OldWeightedTrie(ArrayList<Word> wordList) {
         root = new TrieNode(Character.MIN_VALUE, 0);
         for (Word word : wordList) {
             addWord(word.word, word.weight);

@@ -3,12 +3,11 @@ package com.example.distinctionproject.AutoCompleters;
 import android.content.Context;
 import android.widget.Filter;
 
-import com.example.distinctionproject.WeightedTrie;
+import com.example.distinctionproject.OldWeightedTrie;
+import com.example.distinctionproject.WeightedTrie.WeightedTrie;
 import com.example.distinctionproject.Word;
 
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
 import java.util.Date;
 
 public class TrieAdapter extends WordAdapter {
@@ -49,6 +48,7 @@ public class TrieAdapter extends WordAdapter {
         }
     };
 
+    //private OldWeightedTrie trie;
     private WeightedTrie trie;
 
     public TrieAdapter(Context context, int resource, ArrayList<Word> wordList) {
@@ -56,13 +56,13 @@ public class TrieAdapter extends WordAdapter {
         trie = new WeightedTrie(wordList);
     }
 
-    public String printTrie() {
+    /*public String printTrie() {
         return trie.printTrie();
-    }
+    }*/
 
-    public String getChildren(String header) {
-        return trie.printTrie(header);
-    }
+    /*public String getChildren(String header) {
+        return trie.getSuggestions(header);
+    }*/
 
     @Override
     public Filter getFilter() {

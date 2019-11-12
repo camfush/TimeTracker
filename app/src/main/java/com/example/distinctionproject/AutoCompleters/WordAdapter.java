@@ -95,7 +95,7 @@ public class WordAdapter extends ArrayAdapter<Word> {
 
         Word word = getItem(position);
 
-        TextView name = (TextView) view.findViewById(R.id.autocorrect_option);
+        TextView name = view.findViewById(R.id.autocorrect_option);
         name.setText(word.word);
 
         return view;

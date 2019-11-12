@@ -132,7 +132,7 @@ public class SessionActivity extends AppCompatActivity {
         Date stop = new Date();
         System.out.println("TIME CHECK: LOAD TIME: " + (stop.getTime() - start.getTime()));
 
-        System.out.println(((TrieAdapter)adapter).printTrie());
+        //System.out.println(((TrieAdapter)adapter).printTrie());
 
         title.setAdapter(adapter);
         title.setDropDownWidth(400);
@@ -141,8 +141,8 @@ public class SessionActivity extends AppCompatActivity {
 
     private void DisplayText() {
         int seconds = totalTime % 60;
-        int minutes = (int)(totalTime / 60) % 60;
-        int hours = (int)(totalTime / 3600);
+        int minutes = (totalTime / 60) % 60;
+        int hours = totalTime / 3600;
         String display = "";
         if (hours > 0)
             display += hours + " hours, ";

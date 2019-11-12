@@ -109,7 +109,7 @@ public class Task implements Parcelable, Serializable {
                     cutoff.setDate(1 + cutoff.getDate() - cutoff.getDay());
                 else
                     cutoff.setDate(cutoff.getDate() - 6);
-                cutoff.setDate(cutoff.getDay());
+                //cutoff.setDate(cutoff.getDay());
                 break;
             case Monthly:
                 cutoff.setDate(1);

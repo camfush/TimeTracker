@@ -207,7 +207,13 @@ public class MainActivity extends AppCompatActivity implements Spinner.OnItemSel
             this.yPos = yPos;
         }
 
-        public float getSize() {return (task.getTotal() / 60 + SIZE_BASE) * SIZE_MOD;}
+        public float getArea() {return (task.getTotal() / 60 + SIZE_BASE) * SIZE_MOD;}
+
+        public float getUnscaledArea() {return (task.getTotal() / 60 + SIZE_BASE);}
+
+        public float getSize() {return (float)(Math.pow(getArea() / Math.PI, 0.5f));}
+
+        public float getUnscaledSize() {return (float)(Math.pow(getUnscaledArea() / Math.PI, 0.5f));}
 
         public float getXScreenPos() {
             if (xPos < 0)
@@ -579,11 +585,14 @@ public class MainActivity extends AppCompatActivity implements Spinner.OnItemSel
     public void setAllSizes() {
         float totalA = 0;
         for (TaskButton task : tasks) {
-            float area = (float)(Math.PI * Math.pow(task.task.CalculateTotal() / 60 + SIZE_BASE, 2));
+            task.task.CalculateTotal();
+            float area = task.getUnscaledArea();
             totalA += area;
         }
 
-        SIZE_MOD = (float)Math.pow(1500000 / totalA, 0.5f);// * (1 + (sigFunction((tasks.size() - 7) / 2) * 2));
+        totalA *= 0.00001;
+
+        SIZE_MOD = 15 / totalA;// * (1 + (sigFunction((tasks.size() - 7) / 2) * 2));
 
         for (TaskButton task : tasks) {
             FloatingActionButton taskButton = task.getButton();
